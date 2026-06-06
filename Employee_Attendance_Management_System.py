@@ -3,7 +3,6 @@ import csv
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 from datetime import datetime
-# Library PIL untuk membaca fail gambar .jpg
 from PIL import Image, ImageTk 
 
 # =========================================================================
