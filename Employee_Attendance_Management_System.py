@@ -8,7 +8,6 @@ from PIL import Image, ImageTk
 # =========================================================================
 # 1. STRUKTUR DATA (BACKEND - KEKAL 100% SEPERTI ASAL)
 # =========================================================================
-
 class Employee:
     """Simpan data profil dan sesi log setiap pekerja"""
     def __init__(self, emp_id, name, department, status="Absent", clock_in="-", clock_out="-", total_hours="0.00"):
@@ -19,7 +18,6 @@ class Employee:
         self.last_clock_in = clock_in.strip()     
         self.last_clock_out = clock_out.strip()   
         self.total_hours = total_hours.strip()   
-
 
 class AttendanceSystem:
     """Proses logik sistem (baca/tulis fail, kira masa, import/eksport)"""
@@ -179,11 +177,9 @@ class AttendanceSystem:
             return True, f"Berjaya eksport ke {filepath.split('.')[-1].upper()}!"
         except Exception as e: return False, f"Gagal eksport: {e}"
 
-
 # =========================================================================
 # 2. ANTARAMUKA PENGGUNA (FRONTEND GUI - THEME GLOW CYBERPUNK)
 # =========================================================================
-
 class AttendanceGUI:
     """Menguruskan paparan tetingkap aplikasi (Tkinter NEON GLOW STYLE)"""
     def __init__(self, root, system):
@@ -247,6 +243,8 @@ class AttendanceGUI:
         self.refresh_table()
 
         self.add_exit_button(self.tab_attendance)
+        self.add_exit_button(self.tab_crud)
+        self.add_exit_button(self.tab_hours_check)
     
     def add_exit_button(self, parent_frame):
         frame_footer = tk.Frame(parent_frame, bg="#0e1726", pady=10)
